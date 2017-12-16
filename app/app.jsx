@@ -3,7 +3,8 @@ import React from 'react';
 import {
     BrowserRouter,
     Route,
-    Link
+    Link,
+    Switch
 } from 'react-router-dom'
 
 import MainLayout from './components/mainLayout.jsx';
@@ -16,6 +17,7 @@ import Back from './components/back.jsx';
 render(
     <BrowserRouter>
         <div>
+            <h1>How to do React Js (MainLayout)</h1>
             <ul>
                 <li><Link to="/exVisibility">Скрывать, делать не доступными контролы</Link></li>
                 <li><Link to="/exGridEdit">Редактирование данных в Таблице</Link></li>
@@ -23,11 +25,15 @@ render(
             </ul>
             <hr/>
 
-            <Route path="/" component={MainLayout}/>
-            <Route path="/exVisibility" component={ExVisibility}/>
-            <Route path="/exGridEdit" component={ExGridEdit}/>
-            <Route path="/exGridView" component={ExGridView}/>
-            <Route path="/exGridViewRow/:id" component={ExGridViewRow}/>
+            <main>
+                <Route path="/" component={MainLayout}/>
+                <Switch>
+                    <Route path="/exVisibility" component={ExVisibility}/>
+                    <Route path="/exGridEdit" component={ExGridEdit}/>
+                    <Route path="/exGridView" component={ExGridView}/>
+                    <Route path="/exGridViewRow/:id" component={ExGridViewRow}/>
+                </Switch>
+            </main>
 
         </div>
     </BrowserRouter>, document.getElementById('root'));
