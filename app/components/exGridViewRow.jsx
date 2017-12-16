@@ -1,10 +1,10 @@
 import React from 'react';
+import {DataProvider} from './dataProvider.jsx';
 
 export default class ExGridViewRow extends React.Component {
     render() {
-        console.log(props.params.id);
-        let record = DataProvider.byId(props.params.id);
-        return ( <input type="text" value={record.name}/>
-        )
+        let id = this.props.match.params.id;
+        let record = DataProvider.byId(id);
+        return (<div>{record.id + ', ' + record.name}</div>)
     }
 }

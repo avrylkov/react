@@ -7,7 +7,7 @@ export const DataProvider = {
     ],
     all: function() { return this.heroes},
     byId: function(id) {
-        const isHeroe = p => p.id === id
-        return this.heroes.find(isPlayer)
+        const isHeroe = p => p.id == id;
+        return this.heroes.find(isHeroe);
     }
 }

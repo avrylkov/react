@@ -5,7 +5,7 @@ import {DataProvider} from './dataProvider.jsx';
 
 function RecordView(props) {
     return <tr>
-        <td><Link to={'/exGridViewRow/${props.record.id}'}>{props.record.id}</Link></td>
+        <td><Link to={'/exGridViewRow/' + props.record.id}>{props.record.id}</Link></td>
         <td>{props.record.name}</td>
     </tr>;
 }
@@ -44,7 +44,6 @@ export default class ExGridView extends React.Component {
                     </tbody>
                 </table>
 
-                <Route path="/exGridViewRow/:id" component={ExGridViewRow}/>
             </div>
         );
     }

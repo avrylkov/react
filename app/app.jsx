@@ -11,7 +11,7 @@ import MainLayout from './components/mainLayout.jsx';
 import ExVisibility from './components/exVisibility.jsx';
 import ExGridEdit from './components/exGridEdit.jsx';
 import ExGridView from './components/exGridView.jsx';
-import ExGridViewRow from './components/exGridView.jsx';
+import ExGridViewRow from './components/exGridViewRow.jsx';
 
 render(
     <BrowserRouter>
@@ -29,6 +29,7 @@ render(
                     <Route path="/exVisibility" component={ExVisibility}/>
                     <Route path="/exGridEdit" component={ExGridEdit}/>
                     <Route path="/exGridView" component={ExGridView}/>
+                    <Route path="/exGridViewRow/:id" component={ExGridViewRow}/>
                 </Switch>
             </main>
 
