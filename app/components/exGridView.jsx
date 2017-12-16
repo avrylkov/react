@@ -1,15 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Route, Link} from 'react-router-dom'
+import {ExGridViewRow} from './exGridViewRow.jsx';
 import {DataProvider} from './dataProvider.jsx';
-
-export class ExGridViewRow extends React.Component {
-    render() {
-        console.log(props.params.id);
-        let record = DataProvider.byId(props.params.id);
-        return ( <input type="text" value={record.name}/>
-        )
-    }
-}
 
 function RecordView(props) {
     return <tr>
@@ -52,6 +44,7 @@ export default class ExGridView extends React.Component {
                     </tbody>
                 </table>
 
+                <Route path="/exGridViewRow/:id" component={ExGridViewRow}/>
             </div>
         );
     }
