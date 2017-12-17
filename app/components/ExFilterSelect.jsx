@@ -23,7 +23,10 @@ class InputSearch extends React.Component {
 
     render() {
         return (
+            <div>
             <input value={this.props.label} onChange={this.handleChange}></input>
+            <span>ИД:{this.props.id}</span>
+            </div>
         );
     }
 }
@@ -48,7 +51,7 @@ class SearchList extends React.Component {
         });
 
         return (
-            <select size={10} onChange={this.handleSelect}>
+            <select className="box" size={10} onChange={this.handleSelect}>
                 {filteredRows}
             </select>
         );
@@ -79,6 +82,8 @@ export default class ExFilterSelect extends React.Component {
     }
 
     handleListSelect(value, label) {
+        console.log(value +", " + label);
+
         this.setState(
             {
                 selectId: value,
@@ -92,6 +97,7 @@ export default class ExFilterSelect extends React.Component {
                 <div>
                     <InputSearch
                         label={this.state.selectLabel}
+                        id={this.state.selectId}
                         onInputChange={this.handleInputChange}/>
                 </div>
                 <div>
