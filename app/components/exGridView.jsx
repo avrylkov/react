@@ -7,7 +7,7 @@ function RecordView(props) {
     return <tr>
         <td><Link to={'/exGridViewRow/' + props.record.id}>{props.record.id}</Link></td>
         <td>{props.record.name}</td>
-        <td>{props.record.edit && 'Да' || !props.record.edit && 'Нет'}</td>
+        <td>{props.record.edit ? 'Да' : 'Нет'}</td>
     </tr>;
 }
 

@@ -15,10 +15,10 @@ class GridRow extends React.Component {
     render() {
         let record = this.props.record;
         return (
-            <tr onClick={this.clickEvent}  className={this.props.edit && "selectRow" || !this.props.edit && ""}>
+            <tr onClick={this.clickEvent}  className={record.edit ? "selectRow" : ""}>
                 <td>{record.id}</td>
                 <td>{record.name}</td>
-                <td>{record.edit}</td>
+                <td>{record.edit ? ":-)" : "("}</td>
             </tr>
         )
     }
@@ -29,7 +29,8 @@ export default class ExSelectGridRow extends React.Component {
     constructor() {
         super();
         this.state = {
-            records:[]
+            selectId: null,
+            records: []
         }
 
         this.selectRow = this.selectRow.bind(this);
@@ -48,19 +49,18 @@ export default class ExSelectGridRow extends React.Component {
              r.edit = false;
              if (r.id == record.id) {
                  r.edit = true;
-                 console.log("select="+record.id);
              }
             }
         )
-        this.setState({records: records});
-        console.log(record.id);
+        this.setState({records: records, selectId: record.id});
     }
 
     render() {
         return (
             <div>
-                <h3>Таблица</h3>
-                <table>
+                <h3>Таблица. Выделение через on Click</h3>
+                <span>ИД:{this.state.selectId}</span>
+                <table border={1} cellSpacing={2} cellPadding={5}>
                     <thead>
                     <tr>
                         <th>ИД</th>
