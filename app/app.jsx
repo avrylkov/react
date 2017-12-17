@@ -7,22 +7,33 @@ import {
     Switch
 } from 'react-router-dom'
 
-import MainLayout from './components/mainLayout.jsx';
 import ExVisibility from './components/exVisibility.jsx';
 import ExGridEdit from './components/exGridEdit.jsx';
 import ExGridView from './components/exGridView.jsx';
 import ExGridViewRow from './components/exGridViewRow.jsx';
+import ExFilterSelect from './components/exFilterSelect.jsx';
 
 render(
     <BrowserRouter>
         <div>
             <h1>How to do React Js</h1>
+            <div>
+            <div className="box left">
             <ul>
                 <li><Link to="/exVisibility">Скрывать, делать не доступными контролы</Link></li>
                 <li><Link to="/exGridEdit">Редактирование данных в Таблице</Link></li>
                 <li><Link to="/exGridView">Просмотр данных в Таблице</Link></li>
             </ul>
-            <hr/>
+            </div>
+
+            <div className="box left">
+                <ul>
+                    <li><Link to="/exFilterSelect">Фильтр в Select</Link></li>
+                </ul>
+            </div>
+            </div>
+
+            <hr className="clear"/>
 
             <main>
                 <Switch>
@@ -30,6 +41,7 @@ render(
                     <Route path="/exGridEdit" component={ExGridEdit}/>
                     <Route path="/exGridView" component={ExGridView}/>
                     <Route path="/exGridViewRow/:id" component={ExGridViewRow}/>
+                    <Route path="/exFilterSelect" component={ExFilterSelect}/>
                 </Switch>
             </main>
 
