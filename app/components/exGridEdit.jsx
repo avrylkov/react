@@ -61,7 +61,7 @@ export default class ExGrid extends React.Component {
         return (
             <div>
                 <h3>Таблица</h3>
-                <table className="table table-condensed">
+                <table>
                     <thead>
                     <tr>
                         <th>ИД</th>
