@@ -13,6 +13,7 @@ import ExGridView from './components/exGridView.jsx';
 import ExGridViewRow from './components/exGridViewRow.jsx';
 import ExFilterSelect from './components/exFilterSelect.jsx';
 import ExSelectGridRow from './components/exSelectGridRow.jsx';
+import ExSelect from './components/exSelect.jsx';
 
 render(
     <BrowserRouter>
@@ -31,6 +32,7 @@ render(
                 <ul>
                     <li><Link to="/exFilterSelect">Фильтр в Select</Link></li>
                     <li><Link to="/exSelectGridRow">Выделение записи в Таблице</Link></li>
+                    <li><Link to="/exSelect">ComboBox (Select)</Link></li>
                 </ul>
             </div>
             </div>
@@ -45,6 +47,7 @@ render(
                     <Route path="/exGridViewRow/:id" component={ExGridViewRow}/>
                     <Route path="/exFilterSelect" component={ExFilterSelect}/>
                     <Route path="/exSelectGridRow" component={ExSelectGridRow}/>
+                    <Route path="/exSelect" component={ExSelect}/>
                 </Switch>
             </main>
 
