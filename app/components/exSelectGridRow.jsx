@@ -68,7 +68,7 @@ export default class ExSelectGridRow extends React.Component {
                         <th>Статус</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="selectInTable">
                     {this.state.records.map((record, index)=>{
                         return <GridRow record={record}
                                         key={index}
