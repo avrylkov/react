@@ -3,9 +3,12 @@
     "description": "A React.js project",
     "version": "1.0.0",
     "author": "rylkov.a.com",
+    "homepage": "https://avrylkov.github.io/react/"
     "scripts": {
         "dev": "webpack-dev-server --hot --open",
-        "build": "webpack"
+        "build": "webpack",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"   
     },
     "dependencies": {
         "react": "^16.0.0",
