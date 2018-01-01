@@ -7,7 +7,7 @@ function RecordView(props) {
     return <tr>
         <td><Link to={'/exGridViewRow/' + props.record.id}>{props.record.id}</Link></td>
         <td>{props.record.name}</td>
-        <td>{props.record.edit ? 'Да' : 'Нет'}</td>
+        <td style={props.record.edit ? {background: 'red'} : {background: ''}}>{props.record.edit ? 'Да' : 'Нет'}</td>
     </tr>;
 }
 
@@ -29,7 +29,7 @@ export default class ExGridView extends React.Component {
         return (
             <div>
                 <h3>Редактирование из Таблицы по ссылке</h3>
-                <table className="table table-condensed">
+                <table cellspacing="5" cellpadding="10" border="1">
                     <thead>
                     <tr>
                         <th>ИД</th>

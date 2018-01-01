@@ -1,14 +1,14 @@
 {
     "name": "HowToDo",
-    "description": "A React.js project",
+    "description": "A React js project",
     "version": "1.0.0",
     "author": "rylkov.a.com",
-    "homepage": "https://avrylkov.github.io/react/"
+    "homepage": "https://avrylkov.github.io/react/",
     "scripts": {
         "dev": "webpack-dev-server --hot --open",
         "build": "webpack",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"   
+        "deploy": "gh-pages -d build"
     },
     "dependencies": {
         "react": "^16.0.0",
@@ -21,6 +21,7 @@
         "babel-loader": "^7.1.2",
         "babel-preset-env": "^1.6.0",
         "babel-preset-react": "^6.16.0",
+        "gh-pages": "^1.1.0",
         "webpack": "^3.6.0",
         "webpack-dev-server": "^2.9.1"
     }

@@ -483,7 +483,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var DataProvider = exports.DataProvider = {
-    heroes: [{ id: 100, name: "Станнис Баратеон", edit: false }, { id: 200, name: "Джоффри Баратеон", edit: false }, { id: 300, name: "Робб Старк", edit: false }, { id: 400, name: "Тирион", edit: false }],
+    heroes: [{ id: 100, name: "Станнис Баратеон", edit: false }, { id: 200, name: "Джоффри Баратеон", edit: true }, { id: 300, name: "Робб Старк", edit: false }, { id: 400, name: "Тирион", edit: false }],
     all: function all() {
         return this.heroes;
     },
@@ -492,7 +492,17 @@ var DataProvider = exports.DataProvider = {
             return p.id == id;
         };
         return this.heroes.find(isHeroe);
+    },
+    filterData: function filterData(value) {
+        var rows = [];
+        this.all().forEach(function (item) {
+            if (item.name.toUpperCase().indexOf(value.toUpperCase()) != -1) {
+                rows.push(item);
+            }
+        });
+        return rows;
     }
+
 };
 
 /***/ }),
@@ -2554,6 +2564,10 @@ var _exSelect = __webpack_require__(82);
 
 var _exSelect2 = _interopRequireDefault(_exSelect);
 
+var _exFilterTable = __webpack_require__(83);
+
+var _exFilterTable2 = _interopRequireDefault(_exFilterTable);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _reactDom.render)(_react2.default.createElement(
@@ -2600,7 +2614,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
                         _react2.default.createElement(
                             _reactRouterDom.Link,
                             { to: '/exGridView' },
-                            '\u041F\u0440\u043E\u0441\u043C\u043E\u0442\u0440 \u0434\u0430\u043D\u043D\u044B\u0445 \u0432 \u0422\u0430\u0431\u043B\u0438\u0446\u0435'
+                            '\u041F\u0440\u043E\u0441\u043C\u043E\u0442\u0440 \u0434\u0430\u043D\u043D\u044B\u0445 \u0432 \u0422\u0430\u0431\u043B\u0438\u0446\u0435 \u0438 \u0440\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435'
                         )
                     )
                 )
@@ -2635,7 +2649,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
                         _react2.default.createElement(
                             _reactRouterDom.Link,
                             { to: '/exSelect' },
-                            'ComboBox (Select)'
+                            'ComboBox (Select Id)'
+                        )
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                'div',
+                { className: 'box left' },
+                _react2.default.createElement(
+                    'ul',
+                    null,
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        _react2.default.createElement(
+                            _reactRouterDom.Link,
+                            { to: '/exFilterTable' },
+                            '\u0424\u0438\u043B\u044C\u0442\u0440 \u0432 \u0422\u0430\u0431\u043B\u0438\u0446\u0435'
                         )
                     )
                 )
@@ -2654,7 +2685,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
                 _react2.default.createElement(_reactRouterDom.Route, { path: '/exGridViewRow/:id', component: _exGridViewRow2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: '/exFilterSelect', component: _exFilterSelect2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: '/exSelectGridRow', component: _exSelectGridRow2.default }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/exSelect', component: _exSelect2.default })
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/exSelect', component: _exSelect2.default }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/exFilterTable', component: _exFilterTable2.default })
             )
         )
     )
@@ -23923,7 +23955,7 @@ function RecordView(props) {
         ),
         _react2.default.createElement(
             'td',
-            null,
+            { style: props.record.edit ? { background: 'red' } : { background: '' } },
             props.record.edit ? 'Да' : 'Нет'
         )
     );
@@ -23963,7 +23995,7 @@ var ExGridView = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                     'table',
-                    { className: 'table table-condensed' },
+                    { cellspacing: '5', cellpadding: '10', border: '1' },
                     _react2.default.createElement(
                         'thead',
                         null,
@@ -24032,16 +24064,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function filterData(value) {
-    var rows = [];
-    _dataProvider.DataProvider.all().forEach(function (item) {
-        if (item.name.toUpperCase().indexOf(value.toUpperCase()) != -1) {
-            rows.push(item);
-        }
-    });
-    return rows;
-}
 
 var InputSearch = function (_React$Component) {
     _inherits(InputSearch, _React$Component);
@@ -24148,7 +24170,7 @@ var ExFilterSelect = function (_React$Component3) {
         key: 'handleInputChange',
         value: function handleInputChange(value) {
             this.setState({ search: value });
-            var data = filterData(value);
+            var data = _dataProvider.DataProvider.filterData(value);
             this.setState({
                 filteredData: data,
                 selectLabel: value
@@ -24170,6 +24192,11 @@ var ExFilterSelect = function (_React$Component3) {
             return _react2.default.createElement(
                 'div',
                 null,
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    '\u0424\u0438\u043B\u044C\u0442\u0440 \u0432 Select'
+                ),
                 _react2.default.createElement(
                     'div',
                     null,
@@ -24513,6 +24540,202 @@ var ExSelect = function (_React$Component2) {
 }(_react2.default.Component);
 
 exports.default = ExSelect;
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _dataProvider = __webpack_require__(6);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var InputSearch = function (_React$Component) {
+    _inherits(InputSearch, _React$Component);
+
+    function InputSearch(props) {
+        _classCallCheck(this, InputSearch);
+
+        var _this = _possibleConstructorReturn(this, (InputSearch.__proto__ || Object.getPrototypeOf(InputSearch)).call(this, props));
+
+        _this.handleChange = _this.handleChange.bind(_this);
+        return _this;
+    }
+
+    _createClass(InputSearch, [{
+        key: 'handleChange',
+        value: function handleChange(e) {
+            this.props.onInputChange(e.target.value);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'span',
+                    null,
+                    '\u0418\u043C\u044F'
+                ),
+                _react2.default.createElement('input', { value: this.props.label, onChange: this.handleChange })
+            );
+        }
+    }]);
+
+    return InputSearch;
+}(_react2.default.Component);
+
+var SearchTable = function (_React$Component2) {
+    _inherits(SearchTable, _React$Component2);
+
+    function SearchTable(props) {
+        _classCallCheck(this, SearchTable);
+
+        return _possibleConstructorReturn(this, (SearchTable.__proto__ || Object.getPrototypeOf(SearchTable)).call(this, props));
+    }
+
+    _createClass(SearchTable, [{
+        key: 'render',
+        value: function render() {
+            var filteredRows = [];
+            this.props.filteredData.forEach(function (item) {
+                filteredRows.push(_react2.default.createElement(
+                    'tr',
+                    { key: item.id },
+                    _react2.default.createElement(
+                        'td',
+                        null,
+                        item.id
+                    ),
+                    _react2.default.createElement(
+                        'td',
+                        null,
+                        item.name
+                    ),
+                    _react2.default.createElement(
+                        'td',
+                        null,
+                        _react2.default.createElement('img', { src: item.edit ? "/app/img/emotion_tongue.png" : "/app/img/bg052.gif" })
+                    )
+                ));
+            });
+
+            return _react2.default.createElement(
+                'table',
+                { cellspacing: '5', cellpadding: '10', border: '1' },
+                _react2.default.createElement(
+                    'thead',
+                    null,
+                    _react2.default.createElement(
+                        'th',
+                        null,
+                        '\u0418\u0434'
+                    ),
+                    _react2.default.createElement(
+                        'th',
+                        null,
+                        '\u0418\u043C\u044F'
+                    ),
+                    _react2.default.createElement(
+                        'th',
+                        null,
+                        '\u0421\u0442\u0430\u0442\u0443\u0441'
+                    )
+                ),
+                _react2.default.createElement(
+                    'tbody',
+                    null,
+                    filteredRows
+                )
+            );
+        }
+    }]);
+
+    return SearchTable;
+}(_react2.default.Component);
+
+var ExFilterTable = function (_React$Component3) {
+    _inherits(ExFilterTable, _React$Component3);
+
+    function ExFilterTable(props) {
+        _classCallCheck(this, ExFilterTable);
+
+        var _this3 = _possibleConstructorReturn(this, (ExFilterTable.__proto__ || Object.getPrototypeOf(ExFilterTable)).call(this, props));
+
+        _this3.handleInputChange = _this3.handleInputChange.bind(_this3);
+        _this3.state = { search: '', filteredData: [] };
+        return _this3;
+    }
+
+    _createClass(ExFilterTable, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.setState({
+                filteredData: _dataProvider.DataProvider.all()
+            });
+        }
+    }, {
+        key: 'handleInputChange',
+        value: function handleInputChange(value) {
+            this.setState({ search: value });
+            var data = _dataProvider.DataProvider.filterData(value);
+            this.setState({
+                filteredData: data,
+                selectLabel: value
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    '\u0424\u0438\u043B\u044C\u0442\u0440 \u0432 Table'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(InputSearch, {
+                        label: this.state.selectLabel,
+                        onInputChange: this.handleInputChange })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(SearchTable, {
+                        filteredData: this.state.filteredData,
+                        onSelectChange: this.handleListSelect })
+                )
+            );
+        }
+    }]);
+
+    return ExFilterTable;
+}(_react2.default.Component);
+
+exports.default = ExFilterTable;
 
 /***/ })
 /******/ ]);
