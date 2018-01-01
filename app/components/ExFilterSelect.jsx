@@ -1,16 +1,6 @@
 import React from 'react';
 import {DataProvider} from './dataProvider.jsx';
 
-function filterData(value) {
-    const rows = [];
-    DataProvider.all().forEach(function (item) {
-        if (item.name.toUpperCase().indexOf(value.toUpperCase()) != -1) {
-            rows.push(item);
-        }
-    });
-    return rows;
-}
-
 class InputSearch extends React.Component {
     constructor(props) {
         super(props);
@@ -74,7 +64,7 @@ export default class ExFilterSelect extends React.Component {
 
     handleInputChange(value) {
         this.setState({search: value});
-        const data = filterData(value);
+        const data = DataProvider.filterData(value);
         this.setState({
             filteredData: data,
             selectLabel: value
@@ -94,6 +84,7 @@ export default class ExFilterSelect extends React.Component {
     render() {
         return (
             <div>
+                <h3>Фильтр в Select</h3>
                 <div>
                     <InputSearch
                         label={this.state.selectLabel}
