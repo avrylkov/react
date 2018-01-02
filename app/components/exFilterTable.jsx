@@ -31,7 +31,8 @@ class SearchTable extends React.Component {
             filteredRows.push(<tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
-                <td><img src={item.edit ? "/img/emotion_tongue.png" : "/img/bg052.gif"}/></td>
+                <td><img src={item.edit ? "https://avrylkov.github.io/react/img/emotion_tongue.png" :
+                    "https://avrylkov.github.io/react/img/bg052.gif"}/></td>
                 </tr>);
         });
 
