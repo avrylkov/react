@@ -23995,7 +23995,7 @@ var ExGridView = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                     'table',
-                    { cellspacing: '5', cellpadding: '10', border: '1' },
+                    { cellSpacing: '5', cellPadding: '10', border: '1' },
                     _react2.default.createElement(
                         'thead',
                         null,
@@ -24634,31 +24634,35 @@ var SearchTable = function (_React$Component2) {
                     _react2.default.createElement(
                         'td',
                         null,
-                        _react2.default.createElement('img', { src: item.edit ? "/app/img/emotion_tongue.png" : "/app/img/bg052.gif" })
+                        _react2.default.createElement('img', { src: item.edit ? "/img/emotion_tongue.png" : "/img/bg052.gif" })
                     )
                 ));
             });
 
             return _react2.default.createElement(
                 'table',
-                { cellspacing: '5', cellpadding: '10', border: '1' },
+                { cellSpacing: '5', cellPadding: 5, adding: '10', border: '1' },
                 _react2.default.createElement(
                     'thead',
                     null,
                     _react2.default.createElement(
-                        'th',
+                        'tr',
                         null,
-                        '\u0418\u0434'
-                    ),
-                    _react2.default.createElement(
-                        'th',
-                        null,
-                        '\u0418\u043C\u044F'
-                    ),
-                    _react2.default.createElement(
-                        'th',
-                        null,
-                        '\u0421\u0442\u0430\u0442\u0443\u0441'
+                        _react2.default.createElement(
+                            'th',
+                            null,
+                            '\u0418\u0434'
+                        ),
+                        _react2.default.createElement(
+                            'th',
+                            null,
+                            '\u0418\u043C\u044F'
+                        ),
+                        _react2.default.createElement(
+                            'th',
+                            null,
+                            '\u0421\u0442\u0430\u0442\u0443\u0441'
+                        )
                     )
                 ),
                 _react2.default.createElement(
