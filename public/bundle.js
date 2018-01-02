@@ -2582,6 +2582,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
             'How to do React Js'
         ),
         _react2.default.createElement(
+            'a',
+            { href: 'https://github.com/avrylkov/react' },
+            'Github'
+        ),
+        _react2.default.createElement(
             'div',
             null,
             _react2.default.createElement(
