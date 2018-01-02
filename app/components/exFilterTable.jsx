@@ -31,16 +31,18 @@ class SearchTable extends React.Component {
             filteredRows.push(<tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
-                <td><img src={item.edit ? "/app/img/emotion_tongue.png" : "/app/img/bg052.gif"}/></td>
+                <td><img src={item.edit ? "/img/emotion_tongue.png" : "/img/bg052.gif"}/></td>
                 </tr>);
         });
 
         return (
-            <table cellspacing="5" cellpadding="10" border="1">
+            <table cellSpacing="5" cellPadding={5} adding="10" border="1">
                 <thead>
-                   <th>Ид</th>
-                   <th>Имя</th>
-                   <th>Статус</th>
+                   <tr>
+                       <th>Ид</th>
+                       <th>Имя</th>
+                       <th>Статус</th>
+                   </tr>
                 </thead>
                 <tbody>
                 {filteredRows}

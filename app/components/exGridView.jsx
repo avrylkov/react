@@ -29,7 +29,7 @@ export default class ExGridView extends React.Component {
         return (
             <div>
                 <h3>Редактирование из Таблицы по ссылке</h3>
-                <table cellspacing="5" cellpadding="10" border="1">
+                <table cellSpacing="5" cellPadding="10" border="1">
                     <thead>
                     <tr>
                         <th>ИД</th>
