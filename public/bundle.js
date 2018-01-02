@@ -24634,7 +24634,7 @@ var SearchTable = function (_React$Component2) {
                     _react2.default.createElement(
                         'td',
                         null,
-                        _react2.default.createElement('img', { src: item.edit ? "/img/emotion_tongue.png" : "/img/bg052.gif" })
+                        _react2.default.createElement('img', { src: item.edit ? "https://avrylkov.github.io/react/img/emotion_tongue.png" : "https://avrylkov.github.io/react/img/bg052.gif" })
                     )
                 ));
             });
