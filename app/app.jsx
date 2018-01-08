@@ -19,8 +19,9 @@ import ExFilterTable from './components/exFilterTable.jsx';
 render(
     <BrowserRouter>
         <div>
-            <h1>How to do React Js</h1>
-            <a href="https://github.com/avrylkov/react">Проект на GitHub</a>
+            <h1>How to do React Js ?</h1>
+            <span>Как сделать простые типовые, часто встречающиеся задачи</span>
+            <div><a href="https://github.com/avrylkov/react/tree/master">Проект на GitHub</a></div>
             <div>
                 <div className="box left">
                 <ul>

@@ -28,17 +28,17 @@ export default class ExGridViewRow extends React.Component {
     }
 
     render() {
-        console.log("render ");
         return (
             <div>
                 <form>
+                    <div><a href="https://github.com/avrylkov/react/blob/master/app/components/exGridViewRow.jsx">GitHub</a></div>
                     <fieldset>
                         <legend>Форма редактирования</legend>
-                        <label>ИД
+                        <label>ИД &nbsp;
                             {this.state.record.id}
                         </label>
                         <br/>
-                        <label>Имя
+                        <label>Имя &nbsp;
                             <input type="text" value={this.state.record.name} onChange={this.nameChange}/>
                         </label>
                         <label>
@@ -46,7 +46,7 @@ export default class ExGridViewRow extends React.Component {
                             Статус</label>
                     </fieldset>
                 </form>
-                <Link to={'/exGridView'}>Назад</Link>
+                <Link to={'/exGridView'}>{"< "}Назад</Link>
             </div>
         )
     }

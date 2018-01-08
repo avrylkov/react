@@ -22,7 +22,7 @@ class GridRecord extends React.Component {
             <tr>
                 <td>{record.id}</td>
                 <td><input type="text" value={record.name} onChange={this.nameChange} disabled={record.edit}/></td>
-                <td><input type="checkbox" value={record.edit} onChange={this.editChange}/></td>
+                <td><input type="checkbox" checked={record.edit} onChange={this.editChange}/></td>
             </tr>
         )
     }
@@ -61,7 +61,7 @@ export default class ExGrid extends React.Component {
         return (
             <div>
                 <h3>Редактирование в таблице</h3>
-                <div><a href="https://github.com/avrylkov/react/blob/24122017/app/components/exGridEdit.jsx">GitHub</a></div>
+                <div><a href="https://github.com/avrylkov/react/blob/master/app/components/exGridEdit.jsx">GitHub</a></div>
                 <table>
                     <thead>
                     <tr>
