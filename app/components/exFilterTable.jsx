@@ -104,6 +104,7 @@ export default class ExFilterTable extends React.Component {
         return (
             <div>
                 <h3>Фильтр в Table</h3>
+                <div><a href="https://github.com/avrylkov/react/blob/master/app/components/exFilterTable.jsx">GitHub</a></div>
                 <div>
                     <InputSearch
                         label={this.state.selectLabel}
