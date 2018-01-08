@@ -2471,13 +2471,21 @@ var ExGridViewRow = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            console.log("render ");
             return _react2.default.createElement(
                 'div',
                 null,
                 _react2.default.createElement(
                     'form',
                     null,
+                    _react2.default.createElement(
+                        'div',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { href: 'https://github.com/avrylkov/react/blob/master/app/components/exGridViewRow.jsx' },
+                            'GitHub'
+                        )
+                    ),
                     _react2.default.createElement(
                         'fieldset',
                         null,
@@ -2489,14 +2497,14 @@ var ExGridViewRow = function (_React$Component) {
                         _react2.default.createElement(
                             'label',
                             null,
-                            '\u0418\u0414',
+                            '\u0418\u0414 \xA0',
                             this.state.record.id
                         ),
                         _react2.default.createElement('br', null),
                         _react2.default.createElement(
                             'label',
                             null,
-                            '\u0418\u043C\u044F',
+                            '\u0418\u043C\u044F \xA0',
                             _react2.default.createElement('input', { type: 'text', value: this.state.record.name, onChange: this.nameChange })
                         ),
                         _react2.default.createElement(
@@ -2510,6 +2518,7 @@ var ExGridViewRow = function (_React$Component) {
                 _react2.default.createElement(
                     _reactRouterDom.Link,
                     { to: '/exGridView' },
+                    "< ",
                     '\u041D\u0430\u0437\u0430\u0434'
                 )
             );
@@ -2579,12 +2588,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         _react2.default.createElement(
             'h1',
             null,
-            'How to do React Js'
+            'How to do React Js ?'
         ),
         _react2.default.createElement(
-            'a',
-            { href: 'https://github.com/avrylkov/react' },
-            '\u041F\u0440\u043E\u0435\u043A\u0442 \u043D\u0430 GitHub'
+            'span',
+            null,
+            '\u041A\u0430\u043A \u0441\u0434\u0435\u043B\u0430\u0442\u044C \u043F\u0440\u043E\u0441\u0442\u044B\u0435 \u0442\u0438\u043F\u043E\u0432\u044B\u0435, \u0447\u0430\u0441\u0442\u043E \u0432\u0441\u0442\u0440\u0435\u0447\u0430\u044E\u0449\u0438\u0435\u0441\u044F \u0437\u0430\u0434\u0430\u0447\u0438'
+        ),
+        _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+                'a',
+                { href: 'https://github.com/avrylkov/react/tree/master' },
+                '\u041F\u0440\u043E\u0435\u043A\u0442 \u043D\u0430 GitHub'
+            )
         ),
         _react2.default.createElement(
             'div',
@@ -23710,7 +23728,7 @@ var ExVisibility = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         'a',
-                        { href: 'https://github.com/avrylkov/react/blob/24122017/app/components/exVisibility.jsx' },
+                        { href: 'https://github.com/avrylkov/react/blob/master/app/components/exVisibility.jsx' },
                         'GitHub'
                     )
                 ),
@@ -23815,7 +23833,7 @@ var GridRecord = function (_React$Component) {
                 _react2.default.createElement(
                     'td',
                     null,
-                    _react2.default.createElement('input', { type: 'checkbox', value: record.edit, onChange: this.editChange })
+                    _react2.default.createElement('input', { type: 'checkbox', checked: record.edit, onChange: this.editChange })
                 )
             );
         }
@@ -23880,7 +23898,7 @@ var ExGrid = function (_React$Component2) {
                     null,
                     _react2.default.createElement(
                         'a',
-                        { href: 'https://github.com/avrylkov/react/blob/24122017/app/components/exGridEdit.jsx' },
+                        { href: 'https://github.com/avrylkov/react/blob/master/app/components/exGridEdit.jsx' },
                         'GitHub'
                     )
                 ),
@@ -24022,7 +24040,7 @@ var ExGridView = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         'a',
-                        { href: 'https://github.com/avrylkov/react/blob/24122017/app/components/exGridView.jsx' },
+                        { href: 'https://github.com/avrylkov/react/blob/master/app/components/exGridView.jsx' },
                         'GitHub'
                     )
                 ),
@@ -24233,6 +24251,15 @@ var ExFilterSelect = function (_React$Component3) {
                 _react2.default.createElement(
                     'div',
                     null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: 'https://github.com/avrylkov/react/blob/master/app/components/ExFilterSelect.jsx' },
+                        'GitHub'
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
                     _react2.default.createElement(InputSearch, {
                         label: this.state.selectLabel,
                         id: this.state.selectId,
@@ -24378,7 +24405,16 @@ var ExSelectGridRow = function (_React$Component2) {
                 _react2.default.createElement(
                     'h3',
                     null,
-                    '\u0422\u0430\u0431\u043B\u0438\u0446\u0430. \u0412\u044B\u0434\u0435\u043B\u0435\u043D\u0438\u0435 \u0447\u0435\u0440\u0435\u0437 on Click'
+                    '\u0412\u044B\u0434\u0435\u043B\u0435\u043D\u0438\u0435 \u043F\u043E Click'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: 'https://github.com/avrylkov/react/blob/master/app/components/exSelectGridRow.jsx' },
+                        'GitHub'
+                    )
                 ),
                 _react2.default.createElement(
                     'span',
@@ -24538,6 +24574,15 @@ var ExSelect = function (_React$Component2) {
             return _react2.default.createElement(
                 'div',
                 null,
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: 'https://github.com/avrylkov/react/blob/master/app/components/exSelect.jsx' },
+                        'GitHub'
+                    )
+                ),
                 _react2.default.createElement(
                     'div',
                     null,
@@ -24787,6 +24832,15 @@ var ExFilterTable = function (_React$Component4) {
                     'h3',
                     null,
                     '\u0424\u0438\u043B\u044C\u0442\u0440 \u0432 Table'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: 'https://github.com/avrylkov/react/blob/master/app/components/exFilterTable.jsx' },
+                        'GitHub'
+                    )
                 ),
                 _react2.default.createElement(
                     'div',
