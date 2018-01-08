@@ -1,6 +1,26 @@
 import React from 'react';
 import {DataProvider} from './dataProvider.jsx';
 
+class ButtonSearch extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(e) {
+        this.props.onButtonClick(e.target);
+    }
+
+    render() {
+        return (
+            <span>
+                <button onClick={this.handleClick}>Искать</button>
+            </span>
+        );
+    }
+
+}
+
 class InputSearch extends React.Component {
     constructor(props) {
         super(props);
@@ -13,9 +33,9 @@ class InputSearch extends React.Component {
 
     render() {
         return (
-            <div><span>Имя</span>
+            <span>Имя
                 <input value={this.props.label} onChange={this.handleChange}></input>
-            </div>
+            </span>
         );
     }
 }
@@ -57,7 +77,8 @@ export default class ExFilterTable extends React.Component {
     constructor(props) {
         super(props);
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.state = {search: '', filteredData: []};
+        this.handleButtonSearch = this.handleButtonSearch.bind(this);
+        this.state = {search: '', selectLabel: '', filteredData: []};
     }
 
     componentDidMount() {
@@ -67,12 +88,16 @@ export default class ExFilterTable extends React.Component {
     }
 
     handleInputChange(value) {
+        this.setState({selectLabel: value});
+    }
+
+    handleButtonSearch(target) {
+        let value = this.state.selectLabel;
         this.setState({search: value});
-        const data = DataProvider.filterData(value);
-        this.setState({
-            filteredData: data,
-            selectLabel: value
-        });
+        let data = DataProvider.filterData(value);
+         this.setState({
+         filteredData: data
+         });
     }
 
     render() {
@@ -83,6 +108,8 @@ export default class ExFilterTable extends React.Component {
                     <InputSearch
                         label={this.state.selectLabel}
                         onInputChange={this.handleInputChange}/>
+                    <ButtonSearch
+                        onButtonClick={this.handleButtonSearch}/>
                 </div>
                 <div>
                     <SearchTable

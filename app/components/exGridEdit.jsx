@@ -60,7 +60,8 @@ export default class ExGrid extends React.Component {
     render() {
         return (
             <div>
-                <h3>Таблица</h3>
+                <h3>Редактирование в таблице</h3>
+                <div><a href="https://github.com/avrylkov/react/blob/24122017/app/components/exGridEdit.jsx">GitHub</a></div>
                 <table>
                     <thead>
                     <tr>

@@ -32,6 +32,7 @@ export default class ExVisibility extends React.Component {
         return (
             <div>
                 <h3>Скрывать, делать не доступными контролы</h3>
+                <div><a href="https://github.com/avrylkov/react/blob/24122017/app/components/exVisibility.jsx">GitHub</a></div>
                 <span>Скрыть</span>
                 <input type="checkbox" onChange={this.toggleVisible} checked={this.state.visible}/>
                 <span>Не доступен</span>

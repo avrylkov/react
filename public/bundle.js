@@ -483,7 +483,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var DataProvider = exports.DataProvider = {
-    heroes: [{ id: 100, name: "Станнис Баратеон", edit: false }, { id: 200, name: "Джоффри Баратеон", edit: true }, { id: 300, name: "Робб Старк", edit: false }, { id: 400, name: "Тирион", edit: false }],
+    heroes: [{ id: 100, name: "Станнис Баратеон", edit: false }, { id: 200, name: "Джоффри Баратеон", edit: false }, { id: 300, name: "Робб Старк", edit: false }, { id: 400, name: "Тириона Ланнистера", edit: false }, { id: 500, name: "Санса Старк", edit: true }, { id: 600, name: "Джон Сноу", edit: true }, { id: 700, name: "Серсея", edit: false }],
     all: function all() {
         return this.heroes;
     },
@@ -2584,7 +2584,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         _react2.default.createElement(
             'a',
             { href: 'https://github.com/avrylkov/react' },
-            'Github'
+            '\u041F\u0440\u043E\u0435\u043A\u0442 \u043D\u0430 GitHub'
         ),
         _react2.default.createElement(
             'div',
@@ -23706,6 +23706,15 @@ var ExVisibility = function (_React$Component) {
                     '\u0421\u043A\u0440\u044B\u0432\u0430\u0442\u044C, \u0434\u0435\u043B\u0430\u0442\u044C \u043D\u0435 \u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B\u043C\u0438 \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u044B'
                 ),
                 _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: 'https://github.com/avrylkov/react/blob/24122017/app/components/exVisibility.jsx' },
+                        'GitHub'
+                    )
+                ),
+                _react2.default.createElement(
                     'span',
                     null,
                     '\u0421\u043A\u0440\u044B\u0442\u044C'
@@ -23864,7 +23873,16 @@ var ExGrid = function (_React$Component2) {
                 _react2.default.createElement(
                     'h3',
                     null,
-                    '\u0422\u0430\u0431\u043B\u0438\u0446\u0430'
+                    '\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0432 \u0442\u0430\u0431\u043B\u0438\u0446\u0435'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: 'https://github.com/avrylkov/react/blob/24122017/app/components/exGridEdit.jsx' },
+                        'GitHub'
+                    )
                 ),
                 _react2.default.createElement(
                     'table',
@@ -23951,7 +23969,8 @@ function RecordView(props) {
                 _reactRouterDom.Link,
                 { to: '/exGridViewRow/' + props.record.id },
                 props.record.id
-            )
+            ),
+            _react2.default.createElement('img', { src: "https://avrylkov.github.io/react/img/edit.png" })
         ),
         _react2.default.createElement(
             'td',
@@ -23996,7 +24015,16 @@ var ExGridView = function (_React$Component) {
                 _react2.default.createElement(
                     'h3',
                     null,
-                    '\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0438\u0437 \u0422\u0430\u0431\u043B\u0438\u0446\u044B \u043F\u043E \u0441\u0441\u044B\u043B\u043A\u0435'
+                    '\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0438\u0437 \u0442\u0430\u0431\u043B\u0438\u0446\u044B \u043F\u043E \u0441\u0441\u044B\u043B\u043A\u0435'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { href: 'https://github.com/avrylkov/react/blob/24122017/app/components/exGridView.jsx' },
+                        'GitHub'
+                    )
                 ),
                 _react2.default.createElement(
                     'table',
@@ -24573,16 +24601,51 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var InputSearch = function (_React$Component) {
-    _inherits(InputSearch, _React$Component);
+var ButtonSearch = function (_React$Component) {
+    _inherits(ButtonSearch, _React$Component);
+
+    function ButtonSearch(props) {
+        _classCallCheck(this, ButtonSearch);
+
+        var _this = _possibleConstructorReturn(this, (ButtonSearch.__proto__ || Object.getPrototypeOf(ButtonSearch)).call(this, props));
+
+        _this.handleClick = _this.handleClick.bind(_this);
+        return _this;
+    }
+
+    _createClass(ButtonSearch, [{
+        key: 'handleClick',
+        value: function handleClick(e) {
+            this.props.onButtonClick(e.target);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'span',
+                null,
+                _react2.default.createElement(
+                    'button',
+                    { onClick: this.handleClick },
+                    '\u0418\u0441\u043A\u0430\u0442\u044C'
+                )
+            );
+        }
+    }]);
+
+    return ButtonSearch;
+}(_react2.default.Component);
+
+var InputSearch = function (_React$Component2) {
+    _inherits(InputSearch, _React$Component2);
 
     function InputSearch(props) {
         _classCallCheck(this, InputSearch);
 
-        var _this = _possibleConstructorReturn(this, (InputSearch.__proto__ || Object.getPrototypeOf(InputSearch)).call(this, props));
+        var _this2 = _possibleConstructorReturn(this, (InputSearch.__proto__ || Object.getPrototypeOf(InputSearch)).call(this, props));
 
-        _this.handleChange = _this.handleChange.bind(_this);
-        return _this;
+        _this2.handleChange = _this2.handleChange.bind(_this2);
+        return _this2;
     }
 
     _createClass(InputSearch, [{
@@ -24594,13 +24657,9 @@ var InputSearch = function (_React$Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'div',
+                'span',
                 null,
-                _react2.default.createElement(
-                    'span',
-                    null,
-                    '\u0418\u043C\u044F'
-                ),
+                '\u0418\u043C\u044F',
                 _react2.default.createElement('input', { value: this.props.label, onChange: this.handleChange })
             );
         }
@@ -24609,8 +24668,8 @@ var InputSearch = function (_React$Component) {
     return InputSearch;
 }(_react2.default.Component);
 
-var SearchTable = function (_React$Component2) {
-    _inherits(SearchTable, _React$Component2);
+var SearchTable = function (_React$Component3) {
+    _inherits(SearchTable, _React$Component3);
 
     function SearchTable(props) {
         _classCallCheck(this, SearchTable);
@@ -24682,17 +24741,18 @@ var SearchTable = function (_React$Component2) {
     return SearchTable;
 }(_react2.default.Component);
 
-var ExFilterTable = function (_React$Component3) {
-    _inherits(ExFilterTable, _React$Component3);
+var ExFilterTable = function (_React$Component4) {
+    _inherits(ExFilterTable, _React$Component4);
 
     function ExFilterTable(props) {
         _classCallCheck(this, ExFilterTable);
 
-        var _this3 = _possibleConstructorReturn(this, (ExFilterTable.__proto__ || Object.getPrototypeOf(ExFilterTable)).call(this, props));
+        var _this4 = _possibleConstructorReturn(this, (ExFilterTable.__proto__ || Object.getPrototypeOf(ExFilterTable)).call(this, props));
 
-        _this3.handleInputChange = _this3.handleInputChange.bind(_this3);
-        _this3.state = { search: '', filteredData: [] };
-        return _this3;
+        _this4.handleInputChange = _this4.handleInputChange.bind(_this4);
+        _this4.handleButtonSearch = _this4.handleButtonSearch.bind(_this4);
+        _this4.state = { search: '', selectLabel: '', filteredData: [] };
+        return _this4;
     }
 
     _createClass(ExFilterTable, [{
@@ -24705,11 +24765,16 @@ var ExFilterTable = function (_React$Component3) {
     }, {
         key: 'handleInputChange',
         value: function handleInputChange(value) {
+            this.setState({ selectLabel: value });
+        }
+    }, {
+        key: 'handleButtonSearch',
+        value: function handleButtonSearch(target) {
+            var value = this.state.selectLabel;
             this.setState({ search: value });
             var data = _dataProvider.DataProvider.filterData(value);
             this.setState({
-                filteredData: data,
-                selectLabel: value
+                filteredData: data
             });
         }
     }, {
@@ -24728,7 +24793,9 @@ var ExFilterTable = function (_React$Component3) {
                     null,
                     _react2.default.createElement(InputSearch, {
                         label: this.state.selectLabel,
-                        onInputChange: this.handleInputChange })
+                        onInputChange: this.handleInputChange }),
+                    _react2.default.createElement(ButtonSearch, {
+                        onButtonClick: this.handleButtonSearch })
                 ),
                 _react2.default.createElement(
                     'div',

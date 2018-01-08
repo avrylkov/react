@@ -5,7 +5,9 @@ import {DataProvider} from './dataProvider.jsx';
 
 function RecordView(props) {
     return <tr>
-        <td><Link to={'/exGridViewRow/' + props.record.id}>{props.record.id}</Link></td>
+        <td><Link to={'/exGridViewRow/' + props.record.id}>{props.record.id}</Link>
+            <img src={"https://avrylkov.github.io/react/img/edit.png"}/>
+        </td>
         <td>{props.record.name}</td>
         <td style={props.record.edit ? {background: 'red'} : {background: ''}}>{props.record.edit ? 'Да' : 'Нет'}</td>
     </tr>;
@@ -28,7 +30,8 @@ export default class ExGridView extends React.Component {
     render() {
         return (
             <div>
-                <h3>Редактирование из Таблицы по ссылке</h3>
+                <h3>Редактирование из таблицы по ссылке</h3>
+                <div><a href="https://github.com/avrylkov/react/blob/24122017/app/components/exGridView.jsx">GitHub</a></div>
                 <table cellSpacing="5" cellPadding="10" border="1">
                     <thead>
                     <tr>

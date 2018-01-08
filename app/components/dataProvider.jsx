@@ -1,9 +1,12 @@
 export const DataProvider = {
     heroes: [
         {id: 100, name: "Станнис Баратеон", edit: false},
-        {id: 200, name: "Джоффри Баратеон", edit: true},
+        {id: 200, name: "Джоффри Баратеон", edit: false},
         {id: 300, name: "Робб Старк", edit: false},
-        {id: 400, name: "Тирион", edit: false}
+        {id: 400, name: "Тириона Ланнистера", edit: false},
+        {id: 500, name: "Санса Старк", edit: true},
+        {id: 600, name: "Джон Сноу", edit: true},
+        {id: 700, name: "Серсея", edit: false}
     ],
     all: function() { return this.heroes},
     byId: function(id) {

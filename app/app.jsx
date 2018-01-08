@@ -20,7 +20,7 @@ render(
     <BrowserRouter>
         <div>
             <h1>How to do React Js</h1>
-            <a href="https://github.com/avrylkov/react">Github</a>
+            <a href="https://github.com/avrylkov/react">Проект на GitHub</a>
             <div>
                 <div className="box left">
                 <ul>
