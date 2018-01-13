@@ -85,7 +85,7 @@ export default class ExFilterSelect extends React.Component {
         return (
             <div>
                 <h3>Фильтр в Select</h3>
-                <div><a href="https://github.com/avrylkov/react/blob/master/app/components/ExFilterSelect.jsx">GitHub</a></div>
+                <div><a target="_blank" href="https://github.com/avrylkov/react/blob/master/app/components/ExFilterSelect.jsx">GitHub</a></div>
                 <div>
                     <InputSearch
                         label={this.state.selectLabel}

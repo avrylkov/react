@@ -53,7 +53,7 @@ export default class ExSelect extends React.Component {
     render() {
         return (
             <div>
-                <div><a href="https://github.com/avrylkov/react/blob/master/app/components/exSelect.jsx">GitHub</a></div>
+                <div><a target="_blank" href="https://github.com/avrylkov/react/blob/master/app/components/exSelect.jsx">GitHub</a></div>
                 <div>
                     <span>ИД:</span>
                     <span><strong>id={this.state.selectId}</strong></span>

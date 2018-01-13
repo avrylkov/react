@@ -8,12 +8,20 @@ export const DataProvider = {
         {id: 600, name: "Джон Сноу", edit: true},
         {id: 700, name: "Серсея", edit: false}
     ],
-    all: function() { return this.heroes},
-    byId: function(id) {
-        const isHeroe = p => p.id == id;
-        return this.heroes.find(isHeroe);
+    all: function () {
+        return this.heroes
     },
-    filterData: function(value) {
+    byId: function (id) {
+        //const isHeroe = p => p.id == id;
+        //return this.heroes.find(isHeroe);
+        for (var i = 0; i < this.heroes.length; i++) {
+            if (this.heroes[i].id == id) {
+                return this.heroes[i];
+            }
+        }
+        return null;
+    },
+    filterData: function (value) {
         const rows = [];
         this.all().forEach(function (item) {
             if (item.name.toUpperCase().indexOf(value.toUpperCase()) != -1) {
