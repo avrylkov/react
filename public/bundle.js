@@ -488,10 +488,14 @@ var DataProvider = exports.DataProvider = {
         return this.heroes;
     },
     byId: function byId(id) {
-        var isHeroe = function isHeroe(p) {
-            return p.id == id;
-        };
-        return this.heroes.find(isHeroe);
+        //const isHeroe = p => p.id == id;
+        //return this.heroes.find(isHeroe);
+        for (var i = 0; i < this.heroes.length; i++) {
+            if (this.heroes[i].id == id) {
+                return this.heroes[i];
+            }
+        }
+        return null;
     },
     filterData: function filterData(value) {
         var rows = [];
@@ -2482,7 +2486,7 @@ var ExGridViewRow = function (_React$Component) {
                         null,
                         _react2.default.createElement(
                             'a',
-                            { href: 'https://github.com/avrylkov/react/blob/master/app/components/exGridViewRow.jsx' },
+                            { target: '_blank', href: 'https://github.com/avrylkov/react/blob/master/app/components/exGridViewRow.jsx' },
                             'GitHub'
                         )
                     ),
@@ -2577,6 +2581,10 @@ var _exFilterTable = __webpack_require__(83);
 
 var _exFilterTable2 = _interopRequireDefault(_exFilterTable);
 
+var _exSortTable = __webpack_require__(84);
+
+var _exSortTable2 = _interopRequireDefault(_exSortTable);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _reactDom.render)(_react2.default.createElement(
@@ -2588,7 +2596,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         _react2.default.createElement(
             'h1',
             null,
-            'How to do React Js ?'
+            'How to do this on React Js?'
         ),
         _react2.default.createElement(
             'span',
@@ -2600,7 +2608,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
             null,
             _react2.default.createElement(
                 'a',
-                { href: 'https://github.com/avrylkov/react/tree/master' },
+                { target: '_blank', href: 'https://github.com/avrylkov/react/tree/master' },
                 '\u041F\u0440\u043E\u0435\u043A\u0442 \u043D\u0430 GitHub'
             )
         ),
@@ -2696,6 +2704,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
                             { to: '/exFilterTable' },
                             '\u0424\u0438\u043B\u044C\u0442\u0440 \u0432 \u0422\u0430\u0431\u043B\u0438\u0446\u0435'
                         )
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        _react2.default.createElement(
+                            _reactRouterDom.Link,
+                            { to: '/exSortTable' },
+                            '\u0421\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u043A\u0430 \u0432 \u0422\u0430\u0431\u043B\u0438\u0446\u0435'
+                        )
                     )
                 )
             )
@@ -2714,7 +2731,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
                 _react2.default.createElement(_reactRouterDom.Route, { path: '/exFilterSelect', component: _exFilterSelect2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: '/exSelectGridRow', component: _exSelectGridRow2.default }),
                 _react2.default.createElement(_reactRouterDom.Route, { path: '/exSelect', component: _exSelect2.default }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/exFilterTable', component: _exFilterTable2.default })
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/exFilterTable', component: _exFilterTable2.default }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/exSortTable', component: _exSortTable2.default })
             )
         )
     )
@@ -23733,7 +23751,7 @@ var ExVisibility = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         'a',
-                        { href: 'https://github.com/avrylkov/react/blob/master/app/components/exVisibility.jsx' },
+                        { target: '_blank', href: 'https://github.com/avrylkov/react/blob/master/app/components/exVisibility.jsx' },
                         'GitHub'
                     )
                 ),
@@ -23903,7 +23921,7 @@ var ExGrid = function (_React$Component2) {
                     null,
                     _react2.default.createElement(
                         'a',
-                        { href: 'https://github.com/avrylkov/react/blob/master/app/components/exGridEdit.jsx' },
+                        { target: '_blank', href: 'https://github.com/avrylkov/react/blob/master/app/components/exGridEdit.jsx' },
                         'GitHub'
                     )
                 ),
@@ -24045,7 +24063,7 @@ var ExGridView = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         'a',
-                        { href: 'https://github.com/avrylkov/react/blob/master/app/components/exGridView.jsx' },
+                        { target: '_blank', href: 'https://github.com/avrylkov/react/blob/master/app/components/exGridView.jsx' },
                         'GitHub'
                     )
                 ),
@@ -24258,7 +24276,7 @@ var ExFilterSelect = function (_React$Component3) {
                     null,
                     _react2.default.createElement(
                         'a',
-                        { href: 'https://github.com/avrylkov/react/blob/master/app/components/ExFilterSelect.jsx' },
+                        { target: '_blank', href: 'https://github.com/avrylkov/react/blob/master/app/components/ExFilterSelect.jsx' },
                         'GitHub'
                     )
                 ),
@@ -24417,7 +24435,7 @@ var ExSelectGridRow = function (_React$Component2) {
                     null,
                     _react2.default.createElement(
                         'a',
-                        { href: 'https://github.com/avrylkov/react/blob/master/app/components/exSelectGridRow.jsx' },
+                        { target: '_blank', href: 'https://github.com/avrylkov/react/blob/master/app/components/exSelectGridRow.jsx' },
                         'GitHub'
                     )
                 ),
@@ -24584,7 +24602,7 @@ var ExSelect = function (_React$Component2) {
                     null,
                     _react2.default.createElement(
                         'a',
-                        { href: 'https://github.com/avrylkov/react/blob/master/app/components/exSelect.jsx' },
+                        { target: '_blank', href: 'https://github.com/avrylkov/react/blob/master/app/components/exSelect.jsx' },
                         'GitHub'
                     )
                 ),
@@ -24843,7 +24861,7 @@ var ExFilterTable = function (_React$Component4) {
                     null,
                     _react2.default.createElement(
                         'a',
-                        { href: 'https://github.com/avrylkov/react/blob/master/app/components/exFilterTable.jsx' },
+                        { target: '_blank', href: 'https://github.com/avrylkov/react/blob/master/app/components/exFilterTable.jsx' },
                         'GitHub'
                     )
                 ),
@@ -24871,6 +24889,268 @@ var ExFilterTable = function (_React$Component4) {
 }(_react2.default.Component);
 
 exports.default = ExFilterTable;
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _dataProvider = __webpack_require__(6);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SortButton = function (_React$Component) {
+    _inherits(SortButton, _React$Component);
+
+    function SortButton(props) {
+        _classCallCheck(this, SortButton);
+
+        var _this = _possibleConstructorReturn(this, (SortButton.__proto__ || Object.getPrototypeOf(SortButton)).call(this, props));
+
+        _this.handleClickSort = _this.handleClickSort.bind(_this);
+        return _this;
+    }
+
+    _createClass(SortButton, [{
+        key: 'handleClickSort',
+        value: function handleClickSort(e) {
+            this.props.onClickSort(this.props.colName);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var name = "__";
+            if (this.props.sort == "Asc") {
+                name = "^";
+            } else if (this.props.sort == "Desc") {
+                name = "V";
+            }
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'button',
+                    { onClick: this.handleClickSort },
+                    name
+                )
+            );
+        }
+    }]);
+
+    return SortButton;
+}(_react2.default.Component);
+
+var SortTable = function (_React$Component2) {
+    _inherits(SortTable, _React$Component2);
+
+    function SortTable(props) {
+        _classCallCheck(this, SortTable);
+
+        return _possibleConstructorReturn(this, (SortTable.__proto__ || Object.getPrototypeOf(SortTable)).call(this, props));
+    }
+
+    _createClass(SortTable, [{
+        key: 'render',
+        value: function render() {
+            var sortCols = [];
+            var onClick = this.props.onClickSort;
+            this.props.sortCols.forEach(function (item, index) {
+                sortCols.push(_react2.default.createElement(
+                    'th',
+                    { key: index },
+                    item.colName,
+                    _react2.default.createElement(SortButton, { colName: item.colName, sort: item.sort, onClickSort: onClick })
+                ));
+            });
+
+            var sortRows = [];
+            this.props.rows.forEach(function (item) {
+                sortRows.push(_react2.default.createElement(
+                    'tr',
+                    { key: item.id },
+                    _react2.default.createElement(
+                        'td',
+                        null,
+                        item.id
+                    ),
+                    _react2.default.createElement(
+                        'td',
+                        null,
+                        item.name
+                    )
+                ));
+            });
+
+            return _react2.default.createElement(
+                'table',
+                { cellSpacing: '5', cellPadding: 5, adding: '10', border: '1' },
+                _react2.default.createElement(
+                    'thead',
+                    null,
+                    _react2.default.createElement(
+                        'tr',
+                        null,
+                        sortCols
+                    )
+                ),
+                _react2.default.createElement(
+                    'tbody',
+                    null,
+                    sortRows
+                )
+            );
+        }
+    }]);
+
+    return SortTable;
+}(_react2.default.Component);
+
+var SortInfo = {
+    columns: [{
+        colName: "id",
+        sort: "Asc",
+        funcSort: function funcSort(arr) {
+            if (this.sort == "Asc") {
+                arr.sort(function (a, b) {
+                    return a.id - b.id;
+                });
+            } else {
+                arr.sort(function (a, b) {
+                    return b.id - a.id;
+                });
+            }
+        }
+    }, {
+        colName: "name",
+        sort: "",
+        funcSort: function funcSort(arr) {
+            if (this.sort == "Asc") {
+                arr.sort(function (a, b) {
+                    return a.name.localeCompare(b.name);
+                });
+            } else {
+                arr.sort(function (a, b) {
+                    return -a.name.localeCompare(b.name);
+                });
+            }
+        }
+    }]
+};
+
+var ExSortTable = function (_React$Component3) {
+    _inherits(ExSortTable, _React$Component3);
+
+    function ExSortTable(props) {
+        _classCallCheck(this, ExSortTable);
+
+        var _this3 = _possibleConstructorReturn(this, (ExSortTable.__proto__ || Object.getPrototypeOf(ExSortTable)).call(this, props));
+
+        _this3.onClickSort = _this3.onClickSort.bind(_this3);
+        _this3.state = { sortCols: [], rows: [] };
+        return _this3;
+    }
+
+    _createClass(ExSortTable, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.setState({
+                sortCols: SortInfo.columns,
+                rows: _dataProvider.DataProvider.all()
+            });
+        }
+    }, {
+        key: 'getSortColByName',
+        value: function getSortColByName(cols, name) {
+            for (var i = 0; i < cols.length; i++) {
+                if (cols[i].colName == name) {
+                    return cols[i];
+                }
+            };
+            return null;
+        }
+    }, {
+        key: 'resetSort',
+        value: function resetSort(cols, name) {
+            for (var i = 0; i < cols.length; i++) {
+                if (cols[i].colName != name) {
+                    cols[i].sort = "";
+                }
+            };
+        }
+    }, {
+        key: 'onClickSort',
+        value: function onClickSort(colName) {
+            var cols = this.state.sortCols;
+            var col = this.getSortColByName(cols, colName);
+            console.log(col);
+            if (col.sort !== "") {
+                if (col.sort == "Asc") {
+                    col.sort = "Desc";
+                } else {
+                    col.sort = "Asc";
+                }
+            } else {
+                col.sort = "Asc";
+                this.resetSort(cols, colName);
+            }
+
+            var rows = this.state.rows;
+            col.funcSort(rows);
+            this.setState({ sortCols: cols, rows: rows });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    '\u0421\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u043A\u0430 \u0432 Table'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        'a',
+                        { target: '_blank', href: 'https://github.com/avrylkov/react/blob/master/app/components/exSortTable.jsx' },
+                        'GitHub'
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(SortTable, { sortCols: this.state.sortCols,
+                        rows: this.state.rows,
+                        onClickSort: this.onClickSort })
+                )
+            );
+        }
+    }]);
+
+    return ExSortTable;
+}(_react2.default.Component);
+
+exports.default = ExSortTable;
 
 /***/ })
 /******/ ]);

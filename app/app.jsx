@@ -15,13 +15,14 @@ import ExFilterSelect from './components/exFilterSelect.jsx';
 import ExSelectGridRow from './components/exSelectGridRow.jsx';
 import ExSelect from './components/exSelect.jsx';
 import ExFilterTable from './components/exFilterTable.jsx';
+import ExSortTable from './components/exSortTable.jsx';
 
 render(
     <BrowserRouter>
         <div>
-            <h1>How to do React Js ?</h1>
+            <h1>How to do this on React Js?</h1>
             <span>Как сделать простые типовые, часто встречающиеся задачи</span>
-            <div><a href="https://github.com/avrylkov/react/tree/master">Проект на GitHub</a></div>
+            <div><a target="_blank" href="https://github.com/avrylkov/react/tree/master">Проект на GitHub</a></div>
             <div>
                 <div className="box left">
                 <ul>
@@ -42,6 +43,7 @@ render(
                 <div className="box left">
                     <ul>
                         <li><Link to="/exFilterTable">Фильтр в Таблице</Link></li>
+                        <li><Link to="/exSortTable">Сортировка в Таблице</Link></li>
                     </ul>
                 </div>
             </div>
@@ -58,6 +60,7 @@ render(
                     <Route path="/exSelectGridRow" component={ExSelectGridRow}/>
                     <Route path="/exSelect" component={ExSelect}/>
                     <Route path="/exFilterTable" component={ExFilterTable}/>
+                    <Route path="/exSortTable" component={ExSortTable}/>
                 </Switch>
             </main>
 

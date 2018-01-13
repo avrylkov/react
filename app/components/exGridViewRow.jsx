@@ -31,7 +31,7 @@ export default class ExGridViewRow extends React.Component {
         return (
             <div>
                 <form>
-                    <div><a href="https://github.com/avrylkov/react/blob/master/app/components/exGridViewRow.jsx">GitHub</a></div>
+                    <div><a target="_blank" href="https://github.com/avrylkov/react/blob/master/app/components/exGridViewRow.jsx">GitHub</a></div>
                     <fieldset>
                         <legend>Форма редактирования</legend>
                         <label>ИД &nbsp;

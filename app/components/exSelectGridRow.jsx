@@ -59,7 +59,7 @@ export default class ExSelectGridRow extends React.Component {
         return (
             <div>
                 <h3>Выделение по Click</h3>
-                <div><a href="https://github.com/avrylkov/react/blob/master/app/components/exSelectGridRow.jsx">GitHub</a></div>
+                <div><a target="_blank" href="https://github.com/avrylkov/react/blob/master/app/components/exSelectGridRow.jsx">GitHub</a></div>
                 <span>ИД:{this.state.selectId}</span>
                 <table border={1} cellSpacing={2} cellPadding={5}>
                     <thead>

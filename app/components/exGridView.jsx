@@ -31,7 +31,7 @@ export default class ExGridView extends React.Component {
         return (
             <div>
                 <h3>Редактирование из таблицы по ссылке</h3>
-                <div><a href="https://github.com/avrylkov/react/blob/master/app/components/exGridView.jsx">GitHub</a></div>
+                <div><a target="_blank" href="https://github.com/avrylkov/react/blob/master/app/components/exGridView.jsx">GitHub</a></div>
                 <table cellSpacing="5" cellPadding="10" border="1">
                     <thead>
                     <tr>
