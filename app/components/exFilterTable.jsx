@@ -14,7 +14,7 @@ class ButtonSearch extends React.Component {
     render() {
         return (
             <span>
-                <button onClick={this.handleClick}>Искать</button>
+                &nbsp;<button onClick={this.handleClick}>Искать!</button>
             </span>
         );
     }
@@ -33,7 +33,7 @@ class InputSearch extends React.Component {
 
     render() {
         return (
-            <span>Имя
+            <span>Имя &nbsp;
                 <input value={this.props.label} onChange={this.handleChange}></input>
             </span>
         );
@@ -46,16 +46,6 @@ class SearchTable extends React.Component {
     }
 
     render() {
-        const filteredRows = [];
-        this.props.filteredData.forEach(function (item) {
-            filteredRows.push(<tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td><img src={item.edit ? "https://avrylkov.github.io/react/img/emotion_tongue.png" :
-                    "https://avrylkov.github.io/react/img/bg052.gif"}/></td>
-                </tr>);
-        });
-
         return (
             <table cellSpacing="5" cellPadding={5} adding="10" border="1">
                 <thead>
@@ -66,7 +56,14 @@ class SearchTable extends React.Component {
                    </tr>
                 </thead>
                 <tbody>
-                {filteredRows}
+                {this.props.filteredData.map(function (item) {
+                    return <tr key={item.id}>
+                        <td>{item.id}</td>
+                        <td>{item.name}</td>
+                        <td><img src={item.edit ? "https://avrylkov.github.io/react/img/emotion_tongue.png" :
+                            "https://avrylkov.github.io/react/img/bg052.gif"}/></td>
+                    </tr>
+                })}
                 </tbody>
             </table>
         );

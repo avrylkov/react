@@ -24566,7 +24566,7 @@ var ExSelect = function (_React$Component2) {
         var _this2 = _possibleConstructorReturn(this, (ExSelect.__proto__ || Object.getPrototypeOf(ExSelect)).call(this, props));
 
         _this2.handleListSelect = _this2.handleListSelect.bind(_this2);
-        _this2.state = { selectId: '', data: [] };
+        _this2.state = { selectId: '200', data: [] };
         return _this2;
     }
 
@@ -24687,10 +24687,11 @@ var ButtonSearch = function (_React$Component) {
             return _react2.default.createElement(
                 'span',
                 null,
+                '\xA0',
                 _react2.default.createElement(
                     'button',
                     { onClick: this.handleClick },
-                    '\u0418\u0441\u043A\u0430\u0442\u044C'
+                    '\u0418\u0441\u043A\u0430\u0442\u044C!'
                 )
             );
         }
@@ -24722,7 +24723,7 @@ var InputSearch = function (_React$Component2) {
             return _react2.default.createElement(
                 'span',
                 null,
-                '\u0418\u043C\u044F',
+                '\u0418\u043C\u044F \xA0',
                 _react2.default.createElement('input', { value: this.props.label, onChange: this.handleChange })
             );
         }
@@ -24743,29 +24744,6 @@ var SearchTable = function (_React$Component3) {
     _createClass(SearchTable, [{
         key: 'render',
         value: function render() {
-            var filteredRows = [];
-            this.props.filteredData.forEach(function (item) {
-                filteredRows.push(_react2.default.createElement(
-                    'tr',
-                    { key: item.id },
-                    _react2.default.createElement(
-                        'td',
-                        null,
-                        item.id
-                    ),
-                    _react2.default.createElement(
-                        'td',
-                        null,
-                        item.name
-                    ),
-                    _react2.default.createElement(
-                        'td',
-                        null,
-                        _react2.default.createElement('img', { src: item.edit ? "https://avrylkov.github.io/react/img/emotion_tongue.png" : "https://avrylkov.github.io/react/img/bg052.gif" })
-                    )
-                ));
-            });
-
             return _react2.default.createElement(
                 'table',
                 { cellSpacing: '5', cellPadding: 5, adding: '10', border: '1' },
@@ -24795,7 +24773,27 @@ var SearchTable = function (_React$Component3) {
                 _react2.default.createElement(
                     'tbody',
                     null,
-                    filteredRows
+                    this.props.filteredData.map(function (item) {
+                        return _react2.default.createElement(
+                            'tr',
+                            { key: item.id },
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                item.id
+                            ),
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                item.name
+                            ),
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                _react2.default.createElement('img', { src: item.edit ? "https://avrylkov.github.io/react/img/emotion_tongue.png" : "https://avrylkov.github.io/react/img/bg052.gif" })
+                            )
+                        );
+                    })
                 )
             );
         }

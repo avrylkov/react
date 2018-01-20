@@ -32,7 +32,7 @@ export default class ExSelect extends React.Component {
     constructor(props) {
         super(props);
         this.handleListSelect = this.handleListSelect.bind(this);
-        this.state = {selectId: '', data: []};
+        this.state = {selectId: '200', data: []};
     }
 
     componentDidMount() {
